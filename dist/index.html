@@ -33,6 +33,11 @@
      <p id="fit-status" class="fit-status" aria-live="polite">Your guest’s name fits perfectly.</p>
      <div class="divider"></div>
      <div class="section-heading"><h3>Ready to send some joy?</h3></div>
+     <label for="admits">Number of guests admitted</label>
+     <input id="admits" type="number" min="1" max="50" step="1" value="1">
+     <details class="organiser"><summary>Organiser access</summary><label for="organiser-key">Private organiser key</label><input id="organiser-key" type="password" autocomplete="off" placeholder="Paste your organiser key"><p class="helper">Needed to issue valid invitations. Kept only in this browser tab’s session.</p><button type="button" id="lock" class="text-button">Forget key</button></details>
+     <div class="code-box"><label for="access-code">Invitation access code</label><output id="access-code">Not issued yet</output><p id="code-status" class="helper" aria-live="polite">A unique code is saved to the wedding website when you generate or download this invitation.</p><button type="button" id="generate" class="text-button" disabled>Generate code</button><button type="button" id="new-card" class="text-button">New invitation</button></div>
+     <a class="verify-link" href="https://shepherdwedsrita.vercel.app/#rsvp" target="_blank" rel="noopener">Verify a card on the wedding website ↗</a>
      <label for="format">Download format</label><select id="format"><option value="png">PNG · Best quality</option><option value="jpeg">JPG · Smaller file</option></select>
      <button type="submit" id="download" class="download" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>Download invitation</span></button>
      <p class="download-note">Full-resolution card. Ready to share or print.</p>
@@ -46,3 +51,4 @@
  <dialog id="large-preview"><div class="dialog-top"><span>Your invitation</span><button id="close-preview" type="button" aria-label="Close enlarged preview">✕</button></div><img id="large-image" alt="Enlarged personalized wedding invitation"></dialog>
 </body>
 </html>
+
