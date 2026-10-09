@@ -26,7 +26,7 @@ function prepareBase(original,blank){
   }
   for(let row=0;row<h;row++){
    const i=(row*w+col)*4;
-   const alpha=Math.min(1,col/8,(w-1-col)/8,row/5,(h-1-row)/5);
+   const alpha=Math.min(1,col/8,(w-1-col)/8,row/2,(h-1-row)/2);
    for(let channel=0;channel<3;channel++)repaired.data[i+channel]=source.data[i+channel]*(1-alpha)+(repaired.data[i+channel]+correction[channel])*alpha;
   }
  }
@@ -72,3 +72,4 @@ $('expand').addEventListener('click',()=>{if(!ready)return;$('large-image').src=
 $('close-preview').addEventListener('click',()=>$('large-preview').close());
 $('large-preview').addEventListener('click',e=>{if(e.target===$('large-preview')){const r=e.target.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)e.target.close();}});
 Promise.all([loadImage('assets/invitation-original.png'),loadImage('assets/invitation-blank.png'),document.fonts.ready]).then(([original,blank])=>{prepareBase(original,blank);ready=true;$('loading').hidden=true;render();}).catch(error=>{$('loading').textContent=error.message;$('expand').disabled=true;});
+
