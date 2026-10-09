@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#344b3c">
+  <meta name="description" content="A personal invitation, beautifully made. Create and download guest invitations for Shepherd and Rita's wedding.">
+  <title>Shepherd & Rita — Invitation Studio</title>
+  <link rel="stylesheet" href="style.css"><script src="app.js" defer></script>
+</head>
+<body>
+ <header><a class="brand" href="./" aria-label="Invitation studio home"><span class="monogram">S<span>&</span>R</span><span class="brand-copy">SHEPHERD & RITA<small>INVITATION STUDIO</small></span></a><span class="header-date"><span class="little-star">✧</span> 12 DECEMBER 2026</span></header>
+ <main>
+  <div class="intro"><div><p class="eyebrow">A CELEBRATION OF LOVE</p><h1>Make it <em>personal.</em></h1><p class="subtitle">One beautiful invitation. A special welcome for every guest.</p></div><span class="edition">THE WEDDING COLLECTION <span>01 / 01</span></span></div>
+  <div class="workspace">
+   <section class="preview-panel" aria-label="Invitation preview">
+    <div class="preview-toolbar"><span><i class="status-dot"></i> LIVE PREVIEW</span><button type="button" id="expand" class="text-button" aria-label="View invitation at larger size">View larger <span aria-hidden="true">↗</span></button></div>
+    <div class="card-stage"><div class="card-wrap"><canvas id="card" width="853" height="1280" role="img" aria-label="Wedding invitation preview"></canvas><div id="loading" class="loading">Preparing your invitation…</div></div></div>
+    <div class="preview-footer"><span>Shepherd <i>&</i> Rita</span><span>853 × 1280 px <span class="separator">/</span> Portrait</span></div>
+   </section>
+   <aside class="editor">
+    <div class="editor-heading"><span class="step">01</span><div><h2>Your guest, their invitation.</h2><p>A little detail that makes it theirs.</p></div></div>
+    <form id="editor-form">
+     <label for="guest">Guest name <span class="required">*</span></label>
+     <input id="guest" name="guest" type="text" value="Mr. Opakrwoth Jonathan" placeholder="e.g. Mr. Opakrwoth Jonathan" maxlength="120" autocomplete="off" spellcheck="false" aria-describedby="name-help">
+     <p id="name-help" class="helper">Include a title, like Mr., Mrs., or Dr., if you’d like.</p>
+     <div class="divider"></div>
+     <div class="section-heading"><h3>The finishing touches</h3><button id="reset" type="button" class="text-button">Reset style ↺</button></div>
+     <label for="font">Font style</label>
+     <select id="font"><option value="classic">Classic serif</option><option value="elegant">Elegant serif</option><option value="script">Handwritten</option><option value="modern">Modern sans</option></select>
+     <div class="size-heading"><label for="size">Font size</label><output id="size-value" for="size">42 px</output></div>
+     <input type="range" id="size" min="18" max="48" value="42"><div class="range-labels"><span>Smaller</span><span>Larger</span></div>
+     <label class="toggle-row" for="autofit"><span><strong>Fit the name automatically</strong><small>Longer names resize to stay beautifully inside.</small></span><input type="checkbox" id="autofit" checked><span class="switch" aria-hidden="true"></span></label>
+     <p id="fit-status" class="fit-status" aria-live="polite">Your guest’s name fits perfectly.</p>
+     <div class="divider"></div>
+     <div class="section-heading"><h3>Ready to send some joy?</h3></div>
+     <label for="format">Download format</label><select id="format"><option value="png">PNG · Best quality</option><option value="jpeg">JPG · Smaller file</option></select>
+     <button type="submit" id="download" class="download" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg><span>Download invitation</span></button>
+     <p class="download-note">Full-resolution card. Ready to share or print.</p>
+     <p id="message" role="status" class="message"></p>
+    </form>
+    <div class="wedding-note"><span aria-hidden="true">✧</span><p><strong>Made for a very special day.</strong><br>Saturday, 12 December 2026 · 1:00 PM EAT<br>Flamingo Hall, Freedom City</p></div>
+   </aside>
+  </div>
+ </main>
+ <footer><span>WITH LOVE, SHEPHERD & RITA</span><span>A name. An invitation. A memory.</span></footer>
+ <dialog id="large-preview"><div class="dialog-top"><span>Your invitation</span><button id="close-preview" type="button" aria-label="Close enlarged preview">✕</button></div><img id="large-image" alt="Enlarged personalized wedding invitation"></dialog>
+</body>
+</html>
